@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>trace-text</title>
+    <style>
+      .animated {
+        display: inline-block;
+        background: url('name.svg') no-repeat;
+        width: 51px;
+        height: 32px;
+      }
+      @font-face {
+      	font-family: 'JustRealize';
+      	src: url("alg-approach/justRealize.woff") format("woff");
+      }
+      .reference {
+        font-family: 'JustRealize';
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animated"></div>
+    <div class="reference">Dan</div>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -8,62 +31,16 @@
    version="1.1"
    width="51.5"
    height="33"
-   id="svg3960">
+   id="snapSvg">
   <g
      transform="translate(-0.28112794,-0.85051866)"
      id="layer4">
-		<style>
+     <style>
 		path {
 			stroke-dasharray: 100;
 			stroke-dashoffset: 100;
-			-webkit-animation: trace 1s;
-			-webkit-animation-fill-mode: forwards;
-			-moz-animation: trace 1s;
-			-moz-animation-fill-mode: forwards;
-		}
-		#path1 {
-			-webkit-animation: trace .5s 0s;
-			-webkit-animation-fill-mode: forwards;
-			-moz-animation: trace .5s 0s;
-			-moz-animation-fill-mode: forwards;
-		}
-		#path2 {
-			-webkit-animation: trace .5s .3s;
-			-webkit-animation-fill-mode: forwards;
-			-moz-animation: trace .5s .3s;
-			-moz-animation-fill-mode: forwards;
-		}
-		#path3 {
-			-webkit-animation: trace .5s .6s;
-			-webkit-animation-fill-mode: forwards;
-			-moz-animation: trace .5s .6s;
-			-moz-animation-fill-mode: forwards;
-		}
-		@-webkit-keyframes trace {
-			from {
-				stroke-dashoffset: 100;
-			}
-			to {
-				stroke-dashoffset: 0;
-			}
-		}
-		@-moz-keyframes trace {
-			from {
-				stroke-dashoffset: 100;
-			}
-			to {
-				stroke-dashoffset: 0;
-			}
-		}
-		@keyframes trace {
-			from {
-				stroke-dashoffset: 100;
-			}
-			to {
-				stroke-dashoffset: 0;
-			}
-		}
-		</style>
+    }
+     </style>
     <path
        d="M 1.2889108,31.012665 1.4591411,17.666612 c 0,0 0.680921,-13.958881 1.2597039,-14.503618 C 3.2976279,2.618257 4.1844598,1.607333 6.1574964,1.903289 8.2002595,2.209704 15.1797,9.393421 14.430687,17.632566 13.681674,25.87171 8.8471346,30.059375 7.8938451,30.025329 6.9405556,29.991283 5.1701608,30.672204 3.0933516,29.140132"
        id="path1"
@@ -78,3 +55,17 @@
        style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;" />
   </g>
 </svg>
+    <script src="snap.svg-min.js"></script>
+    <script>
+      (function(){
+       Snap.select('#path1').animate({strokeDashoffset: 0}, 500);
+       window.setTimeout(function(){
+         Snap.select('#path2').animate({strokeDashoffset: 0}, 500);
+         window.setTimeout(function(){
+           Snap.select('#path3').animate({strokeDashoffset: 0}, 500);
+         }, 300);
+       }, 300);
+       })();
+    </script>
+  </body>
+</html>

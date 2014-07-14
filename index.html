@@ -3,6 +3,12 @@
   <head>
     <title>trace-text</title>
     <style>
+      body {
+        margin: 10rem;
+      }
+      h1 {
+        font-family: Helvetica;
+      }
       .animated {
         display: inline-block;
         background: url('name.svg') no-repeat;
@@ -20,7 +26,56 @@
     </style>
   </head>
   <body>
+    <h1>keyframe animation - no IE</h1>
     <div class="animated"></div>
+    <h1>static</h1>
     <div class="reference">Dan</div>
+    <h1>via JS - cross browser</h1>
+  <svg
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="51.5"
+     height="33"
+     id="snapSvg">
+    <g
+       transform="translate(-0.28112794,-0.85051866)"
+       id="layer4">
+       <style>
+  		path {
+  			stroke-dasharray: 100;
+  			stroke-dashoffset: 100;
+      }
+       </style>
+      <path
+         d="M 1.2889108,31.012665 1.4591411,17.666612 c 0,0 0.680921,-13.958881 1.2597039,-14.503618 C 3.2976279,2.618257 4.1844598,1.607333 6.1574964,1.903289 8.2002595,2.209704 15.1797,9.393421 14.430687,17.632566 13.681674,25.87171 8.8471346,30.059375 7.8938451,30.025329 6.9405556,29.991283 5.1701608,30.672204 3.0933516,29.140132"
+         id="path1"
+         style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:4;" />
+      <path
+         d="m 29.683319,11.368092 c 0,0 -6.486126,-2.706357 -10.690461,8.613651 -3.010081,8.104527 0.684659,10.5241 1.736348,10.520231 5.807051,-0.02136 8.034869,-5.413323 9.362665,-17.465625 1.286391,-11.676476 -4.754372,20.429346 1.29375,18.691283 2.352096,-0.675928 5.549506,-7.013487 5.549506,-7.013487"
+         id="path2"
+         style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;" />
+      <path
+         d="M 38.875753,10.244572 36.83299,30.87648 c 0,0 5.848533,-19.597034 11.269243,-20.972368 3.580784,-0.908511 2.042763,6.775165 1.838487,20.802138"
+         id="path3"
+         style="fill:none;stroke:#000000;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;" />
+    </g>
+  </svg>
+    <script src="snap.svg-min.js"></script>
+    <script>
+      (function(){
+       Snap.select('#path1').animate({strokeDashoffset: 0}, 500);
+       window.setTimeout(function(){
+         Snap.select('#path2').animate({strokeDashoffset: 0}, 500);
+         window.setTimeout(function(){
+           Snap.select('#path3').animate({strokeDashoffset: 0}, 500);
+         }, 300);
+       }, 300);
+       })();
+debugger;
+    </script>
   </body>
 </html>
