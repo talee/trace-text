@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>trace-text</title>
+    <style>
+      @font-face {
+      	font-family: 'JustRealize';
+      	src: url("justRealize.woff") format("woff");
+      }
+      p {
+        font-family: 'JustRealize';
+        font-size: 10rem;
+        color: white;
+        background-color: black;
+        display: inline-block;
+      }
+        /*
+        -webkit-clip-path: polygon(0px 0px, 0px 294px, 147px 0px);
+      @keyframes trace {
+        */
+      .trace {
+        -webkit-animation: "trace" 6s ease-in-out;
+      }
+      @-webkit-keyframes trace {
+        0% {
+          -webkit-clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 1% 0%);
+        }
+        100% {
+          -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="trace">Christopher Johnson</p>
+  </body>
+</html>

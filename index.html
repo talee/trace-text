@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>trace-text</title>
     <style>
+      .animated {
+        display: inline-block;
+        background: url('name.svg') no-repeat;
+        width: 51px;
+        height: 32px;
+      }
       @font-face {
       	font-family: 'JustRealize';
-      	src: url("justRealize.woff") format("woff");
+      	src: url("alg-approach/justRealize.woff") format("woff");
       }
-      p {
+      .reference {
         font-family: 'JustRealize';
-        font-size: 10rem;
+        font-size: 40px;
       }
     </style>
   </head>
   <body>
-    <p>Christopher Johnson</p>
+    <div class="animated"></div>
+    <div class="reference">Dan</div>
   </body>
 </html>
